@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lj.dao.AuditoriumDAO">
+
+    <select id="getAllAuditorium" resultType="Auditorium">
+        SELECT * FROM `Auditorium`;
+    </select>
+
+    <insert id="save" parameterType="java.util.List">
+        INSERT INTO `Auditorium`
+        (`auditorium_name`, `username`, `floor_id`, `build_id`, `campus_id`, `auditorium_area`,
+        `auditorium_capacity`, `auditorium_state`, `auditorium_detail`)
+        VALUES
+        <foreach collection="list" separator="," item="item" close=";">
+            (#{item.auditoriumName}, #{item.username}, #{item.floorId}, #{item.buildId}, #{item.campusId},
+            #{item.auditoriumArea},#{item.auditoriumCapacity}, #{item.auditoriumState}, #{item.auditoriumDetail})
+        </foreach>
+    </insert>
+</mapper>
