@@ -1,4 +1,4 @@
-package com.lj.common.config;
+package com.lj.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,10 +26,10 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.lj.controller"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(new ApiInfoBuilder()
-                        .title("EasyPoi的导入导出功能demoAPI文档")
-                        .description("实现EasyPoi的导入导出功能demo")
+                        .title("图片上传到服务器的demoAPI文档")
+                        .description("实现图片上传到服务器功能demo")
                         .version("1.0.0")
-                        .contact(new Contact("java伍六七","https://www.cnblogs.com/wuliuqi567/","aaa@gmail.com"))
+                        .contact(new Contact("java伍六七","https://blog.csdn.net/liubaojiangba","aaa@gmail.com"))
                         .license("The Apache License")
                         .licenseUrl("http://www.baidu.com")
                         .build());
